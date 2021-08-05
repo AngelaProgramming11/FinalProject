@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <TabPane prefHeight="600.0" prefWidth="646.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Create Drinks">
+                    <content>
+                        <AnchorPane fx:id="createDrinksPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="257.0" layoutY="14.0" prefHeight="95.0" prefWidth="132.0" text="Café">
+                                    <font>
+                                        <Font name="Edwardian Script ITC" size="68.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="selectionTitle" alignment="CENTER" layoutX="50.0" layoutY="132.0" prefHeight="17.0" prefWidth="202.0" />
+                                <ImageView fx:id="drinkBase" fitHeight="342.0" fitWidth="266.0" layoutX="330.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/EmptyCup.PNG" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="342.0" fitWidth="266.0" layoutX="330.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/CupOutline.PNG" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="ice" fitHeight="342.0" fitWidth="266.0" layoutX="330.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="tapioca" fitHeight="342.0" fitWidth="266.0" layoutX="330.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="topping" fitHeight="342.0" fitWidth="266.0" layoutX="330.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="straw" fitHeight="342.0" fitWidth="266.0" layoutX="330.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
+                                <AnchorPane fx:id="drinkTypeMenu" layoutX="50.0" layoutY="174.0" prefHeight="302.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <ImageView id="MilkTeaIcon" fx:id="milkTeaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="61.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/MilkTeaIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="FruitTeaIcon" fx:id="fruitTeaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="61.0" layoutY="124.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/FruitTeaIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="selectDrinkTypeBtn" disable="true" layoutX="76.0" layoutY="259.0" mnemonicParsing="false" onMouseClicked="#selectDrinkType" text="Next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Label layoutX="81.0" layoutY="215.0" text="Fruit tea" />
+                                        <Label layoutX="80.0" layoutY="91.0" text="Milk tea" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="milkTeaMenu" layoutX="50.0" layoutY="174.0" prefHeight="302.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <ImageView id="BasicMilkTea" fx:id="basicMilkTeaBtn" fitHeight="81.0" fitWidth="87.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/BasicMilkTeaIcon.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="BrownSugarMilkTea" fx:id="brownSugarMilkTeaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="125.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/brownSugarMilkTeaIcon.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="GreenTeaMilkTea" fx:id="greenTeaMilkTeaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="63.0" layoutY="136.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/GreenTeaMilkTeaIcon.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="selectMilkTeaBtn" disable="true" layoutX="76.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#selectDrinkBase" text="Next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Label layoutX="26.0" layoutY="95.0" text="Basic" />
+                                        <Label layoutX="132.0" layoutY="95.0" text="Brown sugar" />
+                                        <Label layoutX="78.0" layoutY="228.0" text="Green tea" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="fruitTeaMenu" layoutX="50.0" layoutY="174.0" prefHeight="315.0" prefWidth="227.0" visible="false">
+                                    <children>
+                                        <ImageView id="PassionFruitTea" fx:id="passionFruitTeaBtn" fitHeight="81.0" fitWidth="87.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/passionFruitTeaIcon.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="PeachTea" fx:id="peachTeaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="125.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/PeachTeaIcon.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="StrawBerryMatchaTea" fx:id="strawberryMatchaTeaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="63.0" layoutY="136.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/StrawberryMatchTeaIcon.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Label layoutX="7.0" layoutY="95.0" text="Passion Fruit" />
+                                        <Label layoutX="150.0" layoutY="95.0" text="Peach" />
+                                        <Label layoutX="55.0" layoutY="228.0" text="Strawberry Matcha" />
+                                        <Button fx:id="selectFruitTeaBtn" disable="true" layoutX="76.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#selectDrinkBase" text="Next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="iceMenu" layoutX="50.0" layoutY="174.0" prefHeight="328.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <ImageView id="Ice" fx:id="wantsIce" fitHeight="81.0" fitWidth="87.0" layoutX="61.0" layoutY="30.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/IceCubeIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="selectIceBtn" layoutX="75.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#selectIce" text="Next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Button layoutX="73.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#unselectIngredient" text="unselect" />
+                                        <Label layoutX="95.0" layoutY="120.0" text="Ice" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="tapiocaMenu" layoutX="50.0" layoutY="174.0" prefHeight="302.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <ImageView id="Tapioca" fx:id="wantsTapioca" fitHeight="81.0" fitWidth="87.0" layoutX="61.0" layoutY="30.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/TapiocaIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="selectTapiocaBtn" layoutX="76.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#selectTapioca" text="Next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Button layoutX="74.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#unselectIngredient" text="unselect" />
+                                        <Label layoutX="82.0" layoutY="120.0" text="Tapioca" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="toppingsMenu" layoutX="50.0" layoutY="174.0" prefHeight="302.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <ImageView id="Fruits" fx:id="fruitsBtn" fitHeight="81.0" fitWidth="87.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/FruitsIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="HerbalJelly" fx:id="herbalJellyBtn" fitHeight="81.0" fitWidth="87.0" layoutX="125.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/HerbalJellyIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="MilkFoam" fx:id="milkFoamBtn" fitHeight="81.0" fitWidth="87.0" layoutY="119.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/MilkFoamIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="PoppingBoba" fx:id="poppingBobaBtn" fitHeight="81.0" fitWidth="87.0" layoutX="119.0" layoutY="119.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/PoppingBobaIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="RedBean" fx:id="redBeanBtn" fitHeight="81.0" fitWidth="87.0" layoutY="235.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/RedBeanIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="selectToppingsBtn" disable="true" layoutX="131.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#selectToppings" text="Next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Label layoutX="27.0" layoutY="87.0" text="Fruits" />
+                                        <Label layoutX="136.0" layoutY="87.0" text="Herbal jelly" />
+                                        <Label layoutX="14.0" layoutY="206.0" text="Milk foam" />
+                                        <Label layoutX="125.0" layoutY="206.0" text="Popping boba" />
+                                        <Label layoutX="16.0" layoutY="322.0" text="Red bean" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="strawMenu" layoutX="50.0" layoutY="174.0" prefHeight="302.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <ImageView id="BlueStraw" fx:id="blueStrawBtn" fitHeight="81.0" fitWidth="87.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/BlueStrawIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="GreenStraw" fx:id="greenStrawBtn" fitHeight="81.0" fitWidth="87.0" layoutX="119.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/GreenStrawIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="PinkStraw" fx:id="pinkStrawBtn" fitHeight="81.0" fitWidth="87.0" layoutY="136.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/PinkStrawIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView id="YellowStraw" fx:id="yellowStrawBtn" fitHeight="81.0" fitWidth="87.0" layoutX="119.0" layoutY="136.0" onMouseClicked="#selectIngredient" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/YellowStrawIcon.PNG" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="selectStrawBtn" disable="true" layoutX="76.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#selectStraw" text="next">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Label layoutX="29.0" layoutY="87.0" text="Blue" />
+                                        <Label layoutX="144.0" layoutY="87.0" text="Green" />
+                                        <Label layoutX="32.0" layoutY="224.0" text="Pink" />
+                                        <Label layoutX="143.0" layoutY="224.0" text="Yellow" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="nameMenu" layoutX="50.0" layoutY="174.0" prefHeight="302.0" prefWidth="202.0" visible="false">
+                                    <children>
+                                        <Button fx:id="enterNameBtn" layoutX="76.0" layoutY="146.0" mnemonicParsing="false" onMouseClicked="#finishDrink" text="Finish!" />
+                                        <TextField fx:id="newDrinkName" layoutX="39.0" layoutY="87.0" prefHeight="19.0" prefWidth="124.0" promptText="Name:">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font></TextField>
+                                        <Label layoutX="55.0" layoutY="117.0" text="(max 16 characters)" textFill="#fcb7b7">
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                                <Button fx:id="startBtn" layoutX="97.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#start" text="Create new drink" />
+                                <Label fx:id="drinkNameLbl" alignment="CENTER" layoutX="390.0" layoutY="490.0" prefHeight="17.0" prefWidth="134.0">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fx:id="highlightIngredient" fitHeight="150.0" fitWidth="200.0" opacity="0.35" pickOnBounds="true" preserveRatio="true" visible="false">
+                                    <image>
+                                        <Image url="@Images/HighlightIngredient.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Display drinks">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="646.0">
+                            <children>
+                                <ScrollPane hbarPolicy="NEVER" prefHeight="571.0" prefWidth="646.0">
+                                    <content>
+                                        <AnchorPane fx:id="displayDrinksPane" minHeight="0.0" minWidth="0.0" prefHeight="569.0" prefWidth="634.0">
+                                            <children>
+                                                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="83.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                                            </children></AnchorPane>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
